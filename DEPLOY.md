@@ -4,17 +4,55 @@
 
 ---
 
-## Netlify’da tez deploy (bu repo uchun)
+## GitHub Pages (GitHub’da qoladi — tavsiya)
 
-1. **https://app.netlify.com** ga kiring (hisob oching yoki kirish qiling).
-2. **Add new site** → **Import an existing project**.
-3. **Connect to Git provider** → **GitHub** tanlang → **Aliddin44/hidoyattv** reponi tanlang (yoki qidiring: `hidoyattv`).
-4. Build settings (odatda to‘g‘ri keladi, tekshiring):
+Sayt to‘g‘ridan-to‘g‘ri GitHub’da host qilinadi, link: **https://aliddin44.github.io/hidoyattv/**
+
+### Bir marta sozlash
+
+1. Repo oching: **https://github.com/Aliddin44/hidoyattv**
+2. **Settings** → chapdan **Pages**.
+3. **Build and deployment** bo‘limida:
+   - **Source:** **GitHub Actions** ni tanlang.
+4. Hech narsa saqlamasangiz ham bo‘ladi — workflow allaqachon qo‘shilgan.
+
+### Deploy qilish
+
+- `main` branch’ga **push** qilsangiz, avtomatik build va deploy bo‘ladi (1–2 daqiqa).
+- **Actions** tab’da workflow natijasini ko‘rishingiz mumkin.
+- Tayyor sayt: **https://aliddin44.github.io/hidoyattv/**
+
+Barcha jarayon GitHub ichida, Netlify kerak emas.
+
+---
+
+## Netlify’da deploy (ixtiyoriy)
+
+### A) GitHub orqali (tavsiya — bir marta ulasiz, keyin avtomatik)
+
+1. Brauzerda **https://app.netlify.com** oching. **Sign up** / **Log in** (GitHub bilan kirish mumkin).
+2. **Add new site** → **Import an existing project** bosing.
+3. **Connect to Git provider** → **GitHub** ni tanlang. Agar GitHub avval ulanmagan bo‘lsa, **Authorize Netlify** qiling.
+4. Repo ro‘yxatidan **Aliddin44/hidoyattv** ni tanlang (yoki **Configure Netlify on GitHub** dan keyin qidiring: `hidoyattv`).
+5. **Branch to deploy:** `main` qolsin.
+6. **Build settings** (quyidagilarni tekshiring):
    - **Build command:** `npm run build`
-   - **Publish directory:** `dist`
-5. **Deploy site** bosing. 1–2 daqiqadan keyin sizga `https://...netlify.app` link beriladi.
+   - **Publish directory:** `dist`  
+   (Agar **Publish directory** bo‘sh bo‘lsa, qo‘lda `dist` yozing.)
+7. **Deploy site** bosing. 1–2 daqiqadan keyin **Site deploy successful** va sizga `https://...netlify.app` link beriladi.
 
 Keyingi safar `git push` qilsangiz, Netlify avtomatik yangi deploy qiladi.
+
+---
+
+### B) Qo‘lda yuklash (GitHub ishlamasa)
+
+1. Loyihada: `npm run build` bajarilgan bo‘lsin (ichida `dist` papkasi paydo bo‘ladi).
+2. **https://app.netlify.com/drop** ni oching.
+3. `dist` papkasidagi **barcha fayllarni** (index.html va `assets` papkasi) sudrab, Netlify Drop maydoniga tashlang (yoki `dist` papkani o‘zi tashlang — brauzer qo‘llab-quvvatlasa).
+4. Tugagach, sizga `https://...netlify.app` link beriladi.
+
+**Eslatma:** Qo‘lda yuklashda har safar o‘zgartirganda qayta build qilib, `dist` ni qayta tashlash kerak. GitHub ulab qo‘ysangiz, faqat `git push` yetadi.
 
 ---
 
