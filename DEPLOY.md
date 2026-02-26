@@ -6,21 +6,22 @@
 
 ## GitHub Pages (GitHub’da qoladi — tavsiya)
 
-Sayt to‘g‘ridan-to‘g‘ri GitHub’da host qilinadi, link: **https://aliddin44.github.io/hidoyattv/**
+Sayt: **https://aliddin44.github.io/hidoyattv/**
 
-### Bir marta sozlash
+### Bir marta sozlash (404 bo‘lsa shuni tekshiring)
 
-1. Repo oching: **https://github.com/Aliddin44/hidoyattv**
-2. **Settings** → chapdan **Pages**.
-3. **Build and deployment** bo‘limida:
-   - **Source:** **GitHub Actions** ni tanlang.
-4. Hech narsa saqlamasangiz ham bo‘ladi — workflow allaqachon qo‘shilgan.
+1. Repo: **https://github.com/Aliddin44/hidoyattv** → **Settings** → **Actions** → **General**. Pastda **Workflow permissions** da **Read and write permissions** tanlangan bo‘lsin → **Save**.
+2. **Settings** → **Pages**. **Build and deployment** da:
+   - **Source:** **Deploy from a branch** tanlang.
+   - **Branch:** **gh-pages** ni tanlang (birinchi push dan keyin ro‘yxatda chiqadi).
+   - **Folder:** **/ (root)** qoldiring.
+   - **Save** bosing.
 
 ### Deploy qilish
 
-- `main` branch’ga **push** qilsangiz, avtomatik build va deploy bo‘ladi (1–2 daqiqa).
-- **Actions** tab’da workflow natijasini ko‘rishingiz mumkin.
-- Tayyor sayt: **https://aliddin44.github.io/hidoyattv/**
+- `main` ga **push** qilganda workflow avtomatik build qiladi va **gh-pages** branch’ga yozadi (1–2 daqiqa).
+- **Actions** tab’da “Deploy to GitHub Pages” yashil bo‘lsa — tayyor.
+- Sayt: **https://aliddin44.github.io/hidoyattv/**
 
 Barcha jarayon GitHub ichida, Netlify kerak emas.
 
