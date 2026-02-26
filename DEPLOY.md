@@ -1,6 +1,20 @@
 # Ҳидоят ТВ — Internetda demo qilish
 
-Loyihani bepul hostingda ko‘rsatish uchun quyidagi usullardan birini tanlang.
+**GitHub repo:** https://github.com/Aliddin44/hidoyattv
+
+---
+
+## Netlify’da tez deploy (bu repo uchun)
+
+1. **https://app.netlify.com** ga kiring (hisob oching yoki kirish qiling).
+2. **Add new site** → **Import an existing project**.
+3. **Connect to Git provider** → **GitHub** tanlang → **Aliddin44/hidoyattv** reponi tanlang (yoki qidiring: `hidoyattv`).
+4. Build settings (odatda to‘g‘ri keladi, tekshiring):
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+5. **Deploy site** bosing. 1–2 daqiqadan keyin sizga `https://...netlify.app` link beriladi.
+
+Keyingi safar `git push` qilsangiz, Netlify avtomatik yangi deploy qiladi.
 
 ---
 
